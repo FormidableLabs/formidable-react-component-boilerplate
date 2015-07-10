@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-import React from 'react/addons';
-import BoilerplateComponent from '../src/boilerplate-component';
+import React from "react/addons";
+import BoilerplateComponent from "../src/boilerplate-component";
 
 const App = React.createClass({
 
@@ -15,7 +15,7 @@ const App = React.createClass({
   }
 });
 
-const content = document.getElementById('content');
+const content = document.getElementById("content");
 
 React.render(<App/>, content)
 
