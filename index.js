@@ -1,8 +1,8 @@
 'use strict';
 
-var Component = require('./lib/component');
+var BoilerplateComponent = require('./lib/boilerplate-component');
 
-module.exports = Component;
+module.exports = BoilerplateComponent;
 
 
 

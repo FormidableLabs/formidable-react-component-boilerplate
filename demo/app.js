@@ -1,16 +1,15 @@
 'use strict';
 
 import React from 'react/addons';
-import Component from '../src/component';
+import BoilerplateComponent from '../src/boilerplate-component';
 
 const App = React.createClass({
 
   render() {
     return (
       <div className="demo">
-        < Component >
-          component stuff goes here
-        </ Component >
+        < BoilerplateComponent >
+        </ BoilerplateComponent >
       </div>
     )
   }
