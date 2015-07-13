@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-  },
-  "peerDependencies": {
-    "react": "0.13.x"
+    "react": "^0.13.3",
+    "babel": "^5.1.11",
+    "babel-core": "^5.1.13",
+    "rimraf": "^2.4.0"
   },
   "devDependencies": {
-    "babel-core": "^4.7.16",
-    "babel-eslint": "^2.0.2",
-    "babel-loader": "^4.2.0",
+    "babel-eslint": "^3.1.23",
+    "babel-loader": "^5.3.1",
     "chai": "^2.1.2",
     "css-loader": "~0.9.0",
     "del": "^1.1.1",
@@ -39,7 +39,6 @@
     "karma-sinon-chai": "^0.3.0",
     "karma-webpack": "^1.5.0",
     "mocha": "^2.2.1",
-    "react": "0.13.x",
     "react-hot-loader": "^1.0.7",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
@@ -49,7 +48,15 @@
     "webpack-dev-server": "~1.6.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "babel": "rimraf lib && babel --stage 0 src/ -d lib/",
+    "dist": "webpack && webpack --config=webpack.config.js",
+    "demo": "webpack-dev-server --config=webpack.config.js --no-info --content-base demo/",
+    "lib": "npm run babel",
+    "lint": "eslint src",
+    "postinstall": "node -e \"require('fs').stat('lib', function(e,s){process.exit(e || !s.isDirectory() ? 1 : 0)})\" || npm run prepublish",
+    "prepublish": "npm run lib",
+    "test": "karma start",
+    "test-coverage": "karma start karma.conf.coverage.js"
   },
   "repository": {
     "type": "git",
