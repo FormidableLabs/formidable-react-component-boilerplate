@@ -14,11 +14,9 @@ module.exports = {
   cache: true,
   debug: false,
   devtool: false,
-  entry: [
-    'webpack-dev-server/client?http://0.0.0.0:8080',
-    'webpack/hot/only-dev-server',
-    './demo/app.js'
-  ],
+  entry: {
+    app: ['webpack/hot/dev-server', './demo/app.js']
+  },
   stats: {
     colors: true,
     reasons: true
@@ -33,9 +31,7 @@ module.exports = {
       exclude: [/node_modules/,/dist/],
       loader: 'eslint-loader'
     }],
-    loaders: [{
-      loader: 'react-hot'
-    },
+    loaders: [
     {
       test: /\.js$/,
       exclude: [/node_modules/],
@@ -50,8 +46,6 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
-
 };
