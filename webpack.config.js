@@ -15,9 +15,10 @@ module.exports = {
   debug: false,
   devtool: false,
   entry: [
+    'webpack-dev-server/client?http://0.0.0.0:8080',
+    'webpack/hot/only-dev-server',
     './demo/app.js'
   ],
-
   stats: {
     colors: true,
     reasons: true
@@ -33,6 +34,9 @@ module.exports = {
       loader: 'eslint-loader'
     }],
     loaders: [{
+      loader: 'react-hot'
+    },
+    {
       test: /\.js$/,
       exclude: [/node_modules/],
       loader: 'babel-loader'
