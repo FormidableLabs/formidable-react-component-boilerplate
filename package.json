@@ -2,12 +2,15 @@
   "name": "formidable-react-component-boilerplate",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "dependencies": {
-    "react": "0.13.x"
+    "react": "0.13.x",
+    "rimraf": "^2.4.0",
+    "babel": "^5.5.8",
+    "babel-core": "^5.5.8"
   },
   "devDependencies": {
-    "babel-core": "^4.7.16",
+    "babel-core": "^5.5.8",
     "babel-eslint": "^2.0.2",
     "babel-loader": "^4.2.0",
     "chai": "^2.1.2",
@@ -43,9 +46,15 @@
     "webpack-dev-server": "~1.6.5"
   },
   "scripts": {
+    "postinstall": "npm run babel",
+    "babel": "rimraf lib && babel --stage 0 src/ -d lib/",
+    "dist": "webpack && webpack --config=webpack.config.minified.js",
     "demo": "npm run dev-server & npm run open-demo",
-    "dev-server": "webpack-dev-server --content-base demo/ --hot",
-    "open-demo": "opener http://localhost:8080/webpack-dev-server/"
+    "dev-server": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/ --hot",
+    "open-demo": "opener http://localhost:8080/webpack-dev-server/",
+    "lint": "eslint --ext .js,.jsx src",
+    "test": "karma start",
+    "test-coverage": "karma start karma.conf.coverage.js"
   },
   "repository": {
     "type": "git",

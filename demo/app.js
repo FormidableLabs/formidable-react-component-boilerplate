@@ -1,7 +1,7 @@
 /*global document*/
 
 import React from "react/addons";
-import BoilerplateComponent from "../src/boilerplate-component";
+import BoilerplateComponent from "../src/components/boilerplate-component";
 
 const App = React.createClass({
 

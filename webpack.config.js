@@ -1,25 +1,59 @@
 'use strict';
 
+var path = require('path');
+var webpack = require('webpack');
+
+module.exports = {
+  cache: true,
+  entry: path.join(__dirname, '/modules/index.js'),
+  externals: [
+    {
+      "react": {
+        root: "React",
+        commonjs2: "react",
+        commonjs: "react",
+        amd: "react"
+      }
+    }
+  ],
+  output: {
+    path: path.join(__dirname, '/dist'),
+    filename: 'radium.js',
+    library: 'Radium',
+    libraryTarget: 'umd'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader?stage=0'
+      }
+    ]
+  }
+}
+
 var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-
-  output: {
-    path: __dirname,
-    filename: 'main.js',
-    publicPath: '/assets/'
-  },
-
   cache: true,
   debug: false,
-  devtool: false,
-  entry: {
-    app: ['webpack/hot/dev-server', './demo/app.js']
-  },
-  stats: {
-    colors: true,
-    reasons: true
+  devtool: false
+  entry: path.join(__dirname, '/src/index.js'),
+  externals: [
+    {
+      "react": {
+        root: "React",
+        commonjs2: "react",
+        commonjs: "react",
+        amd: "react"
+      }
+    }
+  ],
+
+  output: {
+    path: path.join(__dirname, '/dist'),
+    filename: 'boilerplate-component.js',
   },
 
   resolve: {
