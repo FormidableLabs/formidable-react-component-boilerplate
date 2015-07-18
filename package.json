@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-  },
-  "peerDependencies": {
     "react": "0.13.x"
   },
   "devDependencies": {
@@ -37,7 +35,6 @@
     "karma-webpack": "^1.5.0",
     "mocha": "^2.2.1",
     "opener": "^1.4.1",
-    "react": "0.13.x",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
     "style-loader": "~0.8.0",
