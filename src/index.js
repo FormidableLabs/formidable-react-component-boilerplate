@@ -1,3 +1,1 @@
-'use strict';
-
-module.exports.BoilerplateComponent = require('./components/boilerplate-component');
+module.exports.BoilerplateComponent = require("./components/boilerplate-component");
