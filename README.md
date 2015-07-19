@@ -4,12 +4,12 @@ Formidable Labs flavored react component boilerplate.  This is a set of opinions
 
 ## Run the demo
 ```
-gulp 
+npm run demo 
 ```
 
 ## Make it yours!
 The top level component in this boilerplate repo is called `BoilerplateComponent`. You probably want to change that. Remember to update `index.js` to reflect your naming changes!  
 
 ## When releasing 
-remember to `gulp build` and commit the built `lib` directory before releasing. 
+remember to `npm run dist` and commit the built `dist` directory before releasing. 
 

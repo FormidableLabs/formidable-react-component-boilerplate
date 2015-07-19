@@ -4,7 +4,7 @@ import React from "react/addons";
 
 class BoilerplateComponent {
   render() {
-    return <div>Edit me in src/boilerplate-component.js</div>;
+    return <div>Edit me in src/components/boilerplate-component.js</div>;
   }
 }
 
