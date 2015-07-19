@@ -1,21 +1,19 @@
-'use strict';
-
-var webpack = require('webpack');
-var path = require('path');
+var webpack = require("webpack");
+var path = require("path");
 
 module.exports = {
 
   output: {
     path: __dirname,
-    filename: 'main.js',
-    publicPath: '/assets/'
+    filename: "main.js",
+    publicPath: "/assets/"
   },
 
   cache: true,
   debug: false,
   devtool: false,
   entry: {
-    app: ['webpack/hot/dev-server', './demo/app.js']
+    app: ["webpack/hot/dev-server", "./demo/app.js"]
   },
   stats: {
     colors: true,
@@ -23,25 +21,25 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js']
+    extensions: ["", ".js"]
   },
   module: {
     preLoaders: [{
       test: /\.js$/,
       exclude: [/node_modules/,/dist/],
-      loader: 'eslint-loader'
+      loader: "eslint-loader"
     }],
     loaders: [
     {
       test: /\.js$/,
       exclude: [/node_modules/],
-      loader: 'babel-loader'
+      loader: "babel-loader"
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      loader: "style-loader!css-loader"
     }, {
       test: /\.(png|jpg)$/,
-      loader: 'url-loader?limit=8192'
+      loader: "url-loader?limit=8192"
     }]
   },
 

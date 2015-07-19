@@ -1,9 +1,9 @@
-var webpack = require('webpack');
-var _ = require('lodash');
+var webpack = require("webpack");
+var _ = require("lodash");
 
-module.exports = _.merge({}, require('./webpack.config.js'), {
+module.exports = _.merge({}, require("./webpack.config.js"), {
   output: {
-    filename: 'boilerplate-component.min.js'
+    filename: "boilerplate-component.min.js"
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),

@@ -1,11 +1,11 @@
-var webpack = require('webpack');
-var path = require('path');
+var webpack = require("webpack");
+var path = require("path");
 
 module.exports = {
   cache: true,
   debug: false,
   devtool: false,
-  entry: path.join(__dirname, '/src/index.js'),
+  entry: path.join(__dirname, "/src/index.js"),
   externals: [
     {
       "react": {
@@ -18,30 +18,30 @@ module.exports = {
   ],
 
   output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'boilerplate-component.js',
+    path: path.join(__dirname, "/dist"),
+    filename: "boilerplate-component.js",
   },
 
   resolve: {
-    extensions: ['', '.js']
+    extensions: ["", ".js"]
   },
   module: {
     preLoaders: [{
       test: /\.js$/,
       exclude: [/node_modules/,/dist/],
-      loader: 'eslint-loader'
+      loader: "eslint-loader"
     }],
     loaders: [
     {
       test: /\.js$/,
       exclude: [/node_modules/],
-      loader: 'babel-loader'
+      loader: "babel-loader"
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      loader: "style-loader!css-loader"
     }, {
       test: /\.(png|jpg)$/,
-      loader: 'url-loader?limit=8192'
+      loader: "url-loader?limit=8192"
     }]
   },
 
