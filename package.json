@@ -1,8 +1,30 @@
 {
   "name": "formidable-react-component-boilerplate",
   "version": "0.0.1",
-  "description": "",
+  "description": "react component boilerplate",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FormidableLabs/formidable-react-component-boilerplate.git"
+  },
+  "author": "Lauren Eastridge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FormidableLabs/formidable-react-component-boilerplate/issues"
+  },
+  "homepage": "https://github.com/FormidableLabs/formidable-react-component-boilerplate",
+  "scripts": {
+    "postinstall": "npm run clean && npm run lib",
+    "clean": "rimraf lib",
+    "lib": "babel --stage 0 src/ -d lib/",
+    "dist": "webpack && webpack --config=webpack.config.minified.js",
+    "demo": "npm run dev-server & npm run open-demo",
+    "dev-server": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/ --hot",
+    "open-demo": "opener http://localhost:8080/webpack-dev-server/",
+    "lint": "eslint --ext .js,.jsx src",
+    "test": "karma start & npm run open-test",
+    "open-test": "opener http://localhost:9876/"
+  },
   "dependencies": {
   },
   "devDependencies": {
@@ -39,31 +61,6 @@
     "url-loader": "~0.5.5",
     "webpack": "^1.10.0",
     "webpack-dev-server": "^1.10.0"
-  },
-  "scripts": {
-    "postinstall": "npm run clean && npm run lib",
-    "clean": "rimraf lib",
-    "lib": "babel --stage 0 src/ -d lib/",
-    "dist": "webpack && webpack --config=webpack.config.minified.js",
-    "demo": "npm run dev-server & npm run open-demo",
-    "dev-server": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/ --hot",
-    "open-demo": "opener http://localhost:8080/webpack-dev-server/",
-    "lint": "eslint --ext .js,.jsx src",
-    "test": "karma start",
-    "test-coverage": "karma start karma.conf.coverage.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/FormidableLabs/formidable-react-component-boilerplate.git"
-  },
-  "keywords": [
-    "react"
-  ],
-  "author": "yourName",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/FormidableLabs/formidable-react-component-boilerplate/issues"
-  },
-  "homepage": "https://github.com/FormidableLabs/formidable-react-component-boilerplate"
+  }
 }
 
