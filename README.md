@@ -1,3 +1,6 @@
+[![Travis Status][trav_img]][trav_site]
+
+
 React Component Boilerplate
 ===========================
 
@@ -77,3 +80,7 @@ Which under the hood runs the checks and webpack builds:
 ```
 $ npm prepublish
 ```
+
+[trav_img]: https://api.travis-ci.org/FormidableLabs/formidable-react-component-boilerplate.svg
+[trav_site]: https://travis-ci.org/FormidableLabs/formidable-react-component-boilerplate
+
