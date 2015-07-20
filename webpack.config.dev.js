@@ -1,15 +1,14 @@
 "use strict";
 
-var _ = require("lodash");
 var webpack = require("webpack");
-var base = require("./webpack.config");
+var config = require("./webpack.config");
 
-module.exports = _.merge({}, _.omit(base, "plugins"), {
-  output: {
-    filename: "boilerplate-component.js"
-  },
+// **WARNING**: Mutates base configuration.
+// We do this because lodash isn't available in `production` mode.
+config.output.filename = "boilerplate-component.js";
+config.plugins = [
+  new webpack.SourceMapDevToolPlugin("boilerplate-component.js.map")
+];
 
-  plugins: [
-    new webpack.SourceMapDevToolPlugin("boilerplate-component.js.map")
-  ]
-});
+// Export mutated base.
+module.exports = config;
