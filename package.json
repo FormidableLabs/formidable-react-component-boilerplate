@@ -14,9 +14,7 @@
   },
   "homepage": "https://github.com/FormidableLabs/formidable-react-component-boilerplate",
   "scripts": {
-    "TODO-postinstall": "echo 'FIX COMMANDS'",
-    "postinstall": "npm run clean && npm run lib",
-
+    "prepublish": "npm run check && npm run build",
     "clean-dist": "rimraf dist",
     "build-dist-min": "webpack --config=webpack.config.js",
     "build-dist-dev": "webpack --config=webpack.config.dev.js",
@@ -24,7 +22,6 @@
     "clean-lib": "rimraf lib",
     "build-lib": "npm run clean-lib && babel --stage 0 src -d lib",
     "build": "npm run build-lib && npm run build-dist",
-
     "TODO-dev-hot": "echo 'UPDATE DOCS / COMMANDS'",
     "dev": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/",
     "hot": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/ --hot",
@@ -33,7 +30,6 @@
     "lint-node": "eslint -c .eslintrc-node *.js demo/webpack.*.js",
     "lint-react": "eslint --ext .js,.jsx -c .eslintrc-react src demo/*.jsx",
     "lint": "npm run lint-node && npm run lint-react",
-
     "test": "echo 'TODO (1) Client 11, (2) Server 13, (3) Integration 12 tests.'",
     "check": "npm run lint && npm run test"
   },
