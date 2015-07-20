@@ -31,6 +31,22 @@ and the ES5 `lib`:
 $ npm run build-lib
 ```
 
+
+## Development
+
+Run the `demo` application in a browser window with hot reload:
+(More CPU usage, but faster, more specific updates)
+
+```
+$ npm run demo
+```
+
+Run the `demo` application with watched rebuilds, but not hot reload:
+
+```
+$ npm run demo-dev
+```
+
 ## Quality
 
 Here's what CI (and you) should check:

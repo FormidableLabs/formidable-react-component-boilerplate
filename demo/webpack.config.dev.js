@@ -5,6 +5,11 @@ var webpack = require("webpack");
 
 module.exports = {
 
+  devServer: {
+    contentBase: __dirname,
+    noInfo: false
+  },
+
   output: {
     path: __dirname,
     filename: "main.js",
@@ -12,35 +17,32 @@ module.exports = {
   },
 
   cache: true,
-  debug: false,
-  devtool: false,
+  devtool: "eval-source-map",
   entry: {
-    // TODO: Make "dev" and "hot" different versions.
-    app: ["webpack/hot/dev-server", "demo/app.jsx"]
+    app: ["./demo/app.jsx"]
   },
   stats: {
     colors: true,
     reasons: true
   },
-
   resolve: {
     extensions: ["", ".js", ".jsx"]
   },
   module: {
     loaders: [
-    {
-      test: /\.js$/,
-      exclude: [/node_modules/],
-      loader: "babel-loader"
-    }, {
-      test: /\.css$/,
-      loader: "style-loader!css-loader"
-    }, {
-      test: /\.(png|jpg)$/,
-      loader: "url-loader?limit=8192"
-    }]
+      {
+        test: /\.jsx?$/,
+        exclude: [/node_modules/],
+        loaders: ["babel-loader?stage=0"]
+      }, {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      }, {
+        test: /\.(png|jpg)$/,
+        loader: "url-loader?limit=8192"
+      }
+    ]
   },
-
   plugins: [
     new webpack.NoErrorsPlugin()
   ]
