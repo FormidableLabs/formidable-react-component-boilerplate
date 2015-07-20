@@ -17,10 +17,10 @@
     "TODO-postinstall": "echo 'FIX COMMANDS'",
     "postinstall": "npm run clean && npm run lib",
 
-    "TODO-lib-dist": "echo 'FIX COMMANDS'",
-    "clean": "rimraf lib",
-    "lib": "babel --stage 0 src/ -d lib/",
-    "dist": "npm run lint-dist && webpack && webpack --config=webpack.config.minified.js",
+    "clean": "rimraf dist",
+    "dist-min": "webpack --config=webpack.config.js",
+    "dist-dev": "webpack --config=webpack.config.dev.js",
+    "dist": "npm run clean && npm run dist-min && npm run dist-dev",
 
     "TODO-dev-hot": "echo 'UPDATE DOCS / COMMANDS'",
     "dev": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/",
