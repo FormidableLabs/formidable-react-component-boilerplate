@@ -17,10 +17,13 @@
     "TODO-postinstall": "echo 'FIX COMMANDS'",
     "postinstall": "npm run clean && npm run lib",
 
-    "clean": "rimraf dist",
-    "dist-min": "webpack --config=webpack.config.js",
-    "dist-dev": "webpack --config=webpack.config.dev.js",
-    "dist": "npm run clean && npm run dist-min && npm run dist-dev",
+    "clean-dist": "rimraf dist",
+    "build-dist-min": "webpack --config=webpack.config.js",
+    "build-dist-dev": "webpack --config=webpack.config.dev.js",
+    "build-dist": "npm run clean-dist && npm run dist-min && npm run dist-dev",
+    "clean-lib": "rimraf lib",
+    "build-lib": "npm run clean-lib && babel --stage 0 src -d lib",
+    "build": "npm run build-lib && npm run build-dist",
 
     "TODO-dev-hot": "echo 'UPDATE DOCS / COMMANDS'",
     "dev": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/",
