@@ -2,10 +2,10 @@
 
 import React from "react/addons";
 
-const BoilerplateComponent = React.createClass({
+class BoilerplateComponent {
   render() {
-    return <div>Edit me in src/boilerplate-component.js</div>;
+    return <div>Edit me in src/components/boilerplate-component.js</div>;
   }
-});
+}
 
 export default BoilerplateComponent;

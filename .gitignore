@@ -30,6 +30,5 @@ $RECYCLE.BIN/
 node_modules/
 bower_components/
 .tmp
-dist
-/src/scripts/main.js
+lib
 npm-debug.log
