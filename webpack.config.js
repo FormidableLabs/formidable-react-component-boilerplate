@@ -1,6 +1,4 @@
-/*globals __dirname:false */
-/* eslint no-unused-vars:0 */
-/* eslint no-var:0 */
+"use strict";
 
 var webpack = require("webpack");
 var path = require("path");
@@ -22,8 +20,8 @@ module.exports = {
   ],
 
   output: {
-    path: path.join(__dirname, "/dist"),
-    filename: "boilerplate-component.js",
+    path: path.join(__dirname, "dist"),
+    filename: "boilerplate-component.js"
   },
 
   resolve: {

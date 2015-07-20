@@ -17,4 +17,3 @@ const App = React.createClass({
 const content = document.getElementById("content");
 
 React.render(<App/>, content);
-

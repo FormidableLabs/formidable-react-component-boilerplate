@@ -14,21 +14,31 @@
   },
   "homepage": "https://github.com/FormidableLabs/formidable-react-component-boilerplate",
   "scripts": {
+    "TODO-postinstall": "echo 'FIX COMMANDS'",
     "postinstall": "npm run clean && npm run lib",
+
+    "TODO-lib-dist": "echo 'FIX COMMANDS'",
     "clean": "rimraf lib",
     "lib": "babel --stage 0 src/ -d lib/",
     "dist": "npm run lint-dist && webpack && webpack --config=webpack.config.minified.js",
-    "demo": "npm run lint && npm run dev-server & npm run open-demo",
-    "dev-server": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/ --hot",
+
+    "TODO-dev-hot": "echo 'UPDATE DOCS / COMMANDS'",
+    "dev": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/",
+    "hot": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/ --hot",
     "open-demo": "opener http://localhost:8080/webpack-dev-server/",
-    "lint-dist": "eslint --ext .js,.jsx src",
-    "lint": "eslint --ext .js,.jsx src demo",
-    "test": "karma start & npm run open-test",
-    "open-test": "opener http://localhost:9876/"
+    "demo": "npm run lint && npm run dev & npm run open-demo",
+    "lint-node": "eslint -c .eslintrc-node *.js",
+    "lint-react": "eslint --ext .js,.jsx -c .eslintrc-react src",
+    "lint": "npm run lint-node && npm run lint-react",
+
+    "TODO-MISC": "echo '(1) prune dependencies, (2) dev vs. prod deps'",
+    "test": "echo 'TODO (1) Client 11, (2) Server 13, (3) Integration 12 tests.'",
+    "check": "npm run lint && npm run test"
   },
   "dependencies": {
     "babel": "^5.5.8",
     "babel-core": "^5.5.8",
+    "eslint": "^0.24.1",
     "rimraf": "^2.4.0",
     "webpack": "^1.10.0"
   },
@@ -37,9 +47,7 @@
     "babel-loader": "^5.3.2",
     "chai": "^2.1.2",
     "css-loader": "~0.9.0",
-    "eslint": "^0.24.0",
     "eslint-config-defaults": "^3.0.3",
-    "eslint-loader": "^0.14.0",
     "eslint-plugin-react": "^2.6.4",
     "istanbul": "^0.3.13",
     "istanbul-instrumenter-loader": "^0.1.2",
@@ -64,4 +72,3 @@
     "webpack-dev-server": "^1.10.0"
   }
 }
-

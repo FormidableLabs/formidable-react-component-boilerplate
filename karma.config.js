@@ -1,4 +1,5 @@
-var path = require("path");
+"use strict";
+
 module.exports = function (config) {
   config.set({
     basePath: "",
@@ -17,7 +18,7 @@ module.exports = function (config) {
           test: /\.js$/,
           exclude: [/node_modules/],
           loader: "babel-loader"
-        },{
+        }, {
           test: /\.css$/,
           loader: "style-loader!css-loader"
         }, {
@@ -66,7 +67,7 @@ module.exports = function (config) {
       require("karma-webpack")
     ],
     coverageReporter: {
-      type : "text"
+      type: "text"
     },
     captureTimeout: 60000,
     singleRun: true
