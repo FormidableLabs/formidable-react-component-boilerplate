@@ -27,8 +27,8 @@
     "hot": "webpack-dev-server --config demo/webpack.config.js --no-info --content-base demo/ --hot",
     "open-demo": "opener http://localhost:8080/webpack-dev-server/",
     "demo": "npm run lint && npm run dev & npm run open-demo",
-    "lint-node": "eslint -c .eslintrc-node *.js",
-    "lint-react": "eslint --ext .js,.jsx -c .eslintrc-react src",
+    "lint-node": "eslint -c .eslintrc-node *.js demo/webpack.*.js",
+    "lint-react": "eslint --ext .js,.jsx -c .eslintrc-react src demo/*.jsx",
     "lint": "npm run lint-node && npm run lint-react",
 
     "TODO-MISC": "echo '(1) prune dependencies, (2) dev vs. prod deps'",

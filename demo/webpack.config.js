@@ -1,9 +1,7 @@
 /*globals __dirname:false */
-/* eslint no-unused-vars:0 */
-/* eslint no-var:0 */
+"use strict";
 
 var webpack = require("webpack");
-var path = require("path");
 
 module.exports = {
 
@@ -17,7 +15,8 @@ module.exports = {
   debug: false,
   devtool: false,
   entry: {
-    app: ["webpack/hot/dev-server", "./demo/app.js"]
+    // TODO: Make "dev" and "hot" different versions.
+    app: ["webpack/hot/dev-server", "demo/app.jsx"]
   },
   stats: {
     colors: true,
