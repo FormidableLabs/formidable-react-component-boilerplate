@@ -1,3 +1,6 @@
+/* eslint no-unused-vars:0 */
+/* eslint no-var:0 */
+
 var webpack = require("webpack");
 var _ = require("lodash");
 

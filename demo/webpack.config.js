@@ -1,3 +1,7 @@
+/*globals __dirname:false */
+/* eslint no-unused-vars:0 */
+/* eslint no-var:0 */
+
 var webpack = require("webpack");
 var path = require("path");
 
@@ -24,11 +28,6 @@ module.exports = {
     extensions: ["", ".js"]
   },
   module: {
-    preLoaders: [{
-      test: /\.js$/,
-      exclude: [/node_modules/,/dist/],
-      loader: "eslint-loader"
-    }],
     loaders: [
     {
       test: /\.js$/,

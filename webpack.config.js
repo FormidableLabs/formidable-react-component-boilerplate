@@ -1,3 +1,7 @@
+/*globals __dirname:false */
+/* eslint no-unused-vars:0 */
+/* eslint no-var:0 */
+
 var webpack = require("webpack");
 var path = require("path");
 
@@ -5,7 +9,7 @@ module.exports = {
   cache: true,
   debug: false,
   devtool: false,
-  entry: path.join(__dirname, "/src/index.js"),
+  entry: path.join(__dirname, "src/index.js"),
   externals: [
     {
       "react": {
@@ -26,11 +30,6 @@ module.exports = {
     extensions: ["", ".js"]
   },
   module: {
-    preLoaders: [{
-      test: /\.js$/,
-      exclude: [/node_modules/,/dist/],
-      loader: "eslint-loader"
-    }],
     loaders: [
     {
       test: /\.js$/,
