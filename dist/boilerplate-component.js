@@ -56,14 +56,24 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	
-	module.exports.BoilerplateComponent = __webpack_require__(1);
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	var _componentsBoilerplateComponent = __webpack_require__(1);
+	
+	var _componentsBoilerplateComponent2 = _interopRequireDefault(_componentsBoilerplateComponent);
+
+	exports["default"] = _componentsBoilerplateComponent2["default"];
+	module.exports = exports["default"];
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* eslint no-unused-vars:0 */
-	
+	/*eslint-disable: no-unused-vars*/
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
@@ -77,6 +87,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	var _react = __webpack_require__(2);
+	
+	/*eslint-enable: no-unused-vars*/
 	
 	var _react2 = _interopRequireDefault(_react);
 	

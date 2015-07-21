@@ -1,5 +1,6 @@
-/*global document*/
-
+// BUG: babel-eslint fails to honor control comment globals.
+// github.com/FormidableLabs/formidable-react-component-boilerplate/issues/19
+/*global document:false*/
 import React from "react";
 import BoilerplateComponent from "../src/index";
 

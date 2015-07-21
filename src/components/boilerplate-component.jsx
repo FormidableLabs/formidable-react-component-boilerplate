@@ -1,6 +1,6 @@
-/* eslint no-unused-vars:0 */
-
+/*eslint-disable: no-unused-vars*/
 import React from "react";
+/*eslint-enable: no-unused-vars*/
 
 class BoilerplateComponent {
   render() {
