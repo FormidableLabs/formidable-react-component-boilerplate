@@ -4,15 +4,23 @@
 React Component Boilerplate
 ===========================
 
-Formidable Labs flavored React component boilerplate. This is a set of opinions on how to start a React component.
+Formidable Labs flavored React component boilerplate. This is a set of opinions
+on how to start a React component.
 
 ## Make it yours!
 
-The top level component in this boilerplate repo is called `BoilerplateComponent`. You probably want to change that. Remember to update `src/index.js`, `webpack.config.js`, and `webpack.config.dev.js`to reflect your naming changes!
+The top level component in this boilerplate repo is called
+`BoilerplateComponent`. You probably want to change that. Remember to update
+`src/index.js`, `webpack.config.js`, and `webpack.config.dev.js`to reflect your
+naming changes!
 
 ## The Generator
 
-We expect these opinions to change *often*.  We've written a yeoman generator to pull down the freshest copy of this repo whenever you use it.  It just copies this repo so you don't have to. Check it out [here](https://github.com/FormidableLabs/generator-formidable-react-component)
+We expect these opinions to change *often*.  We've written a yeoman generator to
+pull down the freshest copy of this repo whenever you use it.  It just copies
+this repo so you don't have to. Check it out
+[here](https://github.com/FormidableLabs/generator-formidable-react-component)
+
 
 ## Build
 
@@ -22,7 +30,7 @@ Build for production use (NPM, bower, etc).
 $ npm run build
 ```
 
-Which is composed of commands to create `dist` UMD bundles (min'ed, non-min'ed):
+Which is composed of commands to create `dist` UMD bundles (min'ed, non-min'ed)
 
 ```
 $ npm run build-dist
@@ -33,6 +41,8 @@ and the ES5 `lib`:
 ```
 $ npm run build-lib
 ```
+
+Note that `dist/` files are only updated and committed on **tagged releases**.
 
 
 ## Development
@@ -58,7 +68,7 @@ Here's what CI (and you) should check:
 $ npm run check
 ```
 
-Which is comprised of:
+Which is currently comprised of:
 
 ```
 $ npm run lint
@@ -67,19 +77,36 @@ $ npm run test
 
 **NOTE - COMING SOON!**: Actual tests ;)
 
-## When releasing
+## Releases
 
-Publish with:
+Built files in `dist/` should **not** be committeed during development or PRs.
+Instead we _only_ build and commit them for published, tagged releases. So
+the basic workflow is:
 
 ```
+# Update version
+$ vim package.json # and bump version
+$ git add package.json
+
+# Create the `dist/*{.js,.map}` files and publish working project to NPM.
 $ npm publish
+# ... the project is now _published_ and available to `npm`.
+
+# Commit, tag
+$ git add dist/
+$ git commit -m "Bump version to vVERS"
+$ git tag -a "vVERS" -m "Version VERS"
+$ git push
+$ git push --tags
+# ... the project is now pushed to GitHub and available to `bower`.
 ```
 
-Which under the hood runs the checks and webpack builds:
+Side note: `npm publish` runs `npm prepublish` under the hood, which does the
+build.
 
-```
-$ npm prepublish
-```
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md)
 
 [trav_img]: https://api.travis-ci.org/FormidableLabs/formidable-react-component-boilerplate.svg
 [trav_site]: https://travis-ci.org/FormidableLabs/formidable-react-component-boilerplate
