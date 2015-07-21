@@ -1,11 +1,7 @@
-/*eslint-disable: no-unused-vars*/
 import React from "react";
-/*eslint-enable: no-unused-vars*/
 
-class BoilerplateComponent {
+export default class BoilerplateComponent extends React.Component {
   render() {
-    return <div>Edit me in src/components/boilerplate-component.js</div>;
+    return <div>Edit me!</div>;
   }
 }
-
-export default BoilerplateComponent;

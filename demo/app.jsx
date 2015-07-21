@@ -2,9 +2,9 @@
 // github.com/FormidableLabs/formidable-react-component-boilerplate/issues/19
 /*global document:false*/
 import React from "react";
-import BoilerplateComponent from "../src/index";
+import {BoilerplateComponent} from "../src/index";
 
-class App {
+class App extends React.Component {
   render() {
     return (
       <div className="demo">
