@@ -1,10 +1,9 @@
 /*global document*/
 
-import React from "react/addons";
+import React from "react";
 import BoilerplateComponent from "../src/components/boilerplate-component";
 
-const App = React.createClass({
-
+class App {
   render() {
     return (
       <div className="demo">
@@ -12,7 +11,7 @@ const App = React.createClass({
       </div>
     );
   }
-});
+}
 
 const content = document.getElementById("content");
 
