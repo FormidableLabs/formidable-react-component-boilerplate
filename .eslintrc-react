@@ -1,0 +1,8 @@
+---
+"extends":
+  - "defaults/configurations/walmart/es6-react"
+"globals":
+  # TODO: REMOVE `globals` section of this document.
+  # BUG: babel-eslint fails to honor control comment globals.
+  # github.com/FormidableLabs/formidable-react-component-boilerplate/issues/19
+  "document": false
