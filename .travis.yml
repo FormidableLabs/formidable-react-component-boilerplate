@@ -18,3 +18,8 @@ before_install:
 
 script:
   - npm run check
+
+  # Prune deps to just production and ensure we can still build
+  - npm prune --production
+  - npm install --production
+  - npm run build
