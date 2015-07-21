@@ -1,7 +1,7 @@
 /*global document*/
 
 import React from "react";
-import BoilerplateComponent from "../src/components/boilerplate-component";
+import BoilerplateComponent from "../src/index";
 
 class App {
   render() {

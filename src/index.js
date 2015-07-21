@@ -1,1 +1,2 @@
-module.exports.BoilerplateComponent = require("./components/boilerplate-component");
+import BoilerplateComponent from "./components/boilerplate-component";
+export default BoilerplateComponent;

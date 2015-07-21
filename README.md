@@ -8,7 +8,7 @@ Formidable Labs flavored React component boilerplate. This is a set of opinions 
 
 ## Make it yours!
 
-The top level component in this boilerplate repo is called `BoilerplateComponent`. You probably want to change that. Remember to update `index.js` to reflect your naming changes!
+The top level component in this boilerplate repo is called `BoilerplateComponent`. You probably want to change that. Remember to update `src/index.js`, `webpack.config.js`, and `webpack.config.dev.js`to reflect your naming changes!
 
 ## The Generator
 
