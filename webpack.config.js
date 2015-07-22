@@ -2,6 +2,7 @@
 
 var webpack = require("webpack");
 var path = require("path");
+var meta = require("./meta");
 
 module.exports = {
   cache: true,
@@ -18,8 +19,8 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "boilerplate-component.min.js",
-    library: "BoilerplateComponent",
+    filename: meta.FILE_NAME + ".min.js",
+    library: meta.LIB_NAME,
     libraryTarget: "umd"
   },
   resolve: {
@@ -48,11 +49,10 @@ module.exports = {
       }
     }),
     new webpack.DefinePlugin({
-      "process.env": {
-        // Signal production mode for React JS and other libs.
-        NODE_ENV: JSON.stringify("production")
-      }
+      // Signal production, so that webpack removes non-production code that
+      // is in condtionals like: `if (process.env.NODE_ENV === "production")`
+      "process.env.NODE_ENV": JSON.stringify("production")
     }),
-    new webpack.SourceMapDevToolPlugin("boilerplate-component.min.js.map")
+    new webpack.SourceMapDevToolPlugin("[file].map")
   ]
 };
