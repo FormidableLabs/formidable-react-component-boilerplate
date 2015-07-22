@@ -47,18 +47,26 @@ Note that `dist/` files are only updated and committed on **tagged releases**.
 
 ## Development
 
+All development tasks consist of watching the demo bundle, the test bundle
+and launching a browser pointed to the demo page.
+
 Run the `demo` application in a browser window with hot reload:
 (More CPU usage, but faster, more specific updates)
 
 ```
-$ npm run demo
+$ npm run hot
 ```
 
 Run the `demo` application with watched rebuilds, but not hot reload:
 
 ```
-$ npm run demo-dev
+$ npm run dev
 ```
+
+From there you can see:
+
+* Demo app: [127.0.0.1:3000](http://127.0.0.1:3000/)
+* Client tests: [127.0.0.1:3001/test/client/test.html](http://127.0.0.1:3001/test/client/test.html)
 
 ## Quality
 
@@ -75,7 +83,13 @@ $ npm run lint
 $ npm run test
 ```
 
-**NOTE - COMING SOON!**: Actual tests ;)
+### Client Tests
+
+The client tests rely on webpack dev server to create and serve the bundle
+of the app/test code at: http://127.0.0.1:3001/assets/main.js which is done
+with the task `npm run server-test`.
+
+
 
 ## Releases
 
