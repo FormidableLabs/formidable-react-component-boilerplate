@@ -2,15 +2,9 @@
 
 var webpack = require("webpack");
 var path = require("path");
-
-// Set up shared config to reuse in other configurations.
-var _CONFIG = {
-  FILE_NAME: "boilerplate-component",
-  LIB_NAME: "BoilerplateComponent"
-};
+var meta = require("./meta");
 
 module.exports = {
-  _CONFIG: _CONFIG, // Proxy configuration for later imports.
   cache: true,
   entry: path.join(__dirname, "src/index.js"),
   externals: [
@@ -25,8 +19,8 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, "dist"),
-    filename: _CONFIG.FILE_NAME + ".min.js",
-    library: _CONFIG.LIB_NAME,
+    filename: meta.FILE_NAME + ".min.js",
+    library: meta.LIB_NAME,
     libraryTarget: "umd"
   },
   resolve: {
