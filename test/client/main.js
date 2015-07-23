@@ -5,8 +5,9 @@
  * - Karma tests: `npm run test-client`
  * - Browser tests: `http://localhost:3000/test/client/test.html`
  */
-var chai = require("chai");
-var sinonChai = require("sinon-chai");
+/*globals window:false*/
+const chai = require("chai");
+const sinonChai = require("sinon-chai");
 
 // --------------------------------------------------------------------------
 // Chai / Sinon / Mocha configuration.
@@ -31,7 +32,7 @@ window.mocha.setup({
 require.context("../../src", true, /\.js$/);
 
 // Use webpack to infer and `require` tests automatically.
-var testsReq = require.context(".", true, /\.spec.js$/);
+const testsReq = require.context(".", true, /\.spec.js$/);
 testsReq.keys().map(testsReq);
 
 // Only start mocha in browser.

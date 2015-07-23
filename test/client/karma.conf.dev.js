@@ -1,4 +1,4 @@
-/**
+/*
  * Karma Configuration: "dev" version.
  *
  * This configuration relies on a `webpack-dev-server` already running and
@@ -6,9 +6,7 @@
  * then the alternate `karma.conf.js` file will _also_ run the webpack dev
  * server during the test run.
  */
-var path = require("path");
-
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     frameworks: ["mocha"],
     reporters: ["spec"],
