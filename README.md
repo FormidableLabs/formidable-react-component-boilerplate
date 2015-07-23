@@ -70,7 +70,32 @@ From there you can see:
 
 ## Quality
 
-Here's what CI (and you) should check:
+### In Development
+
+During development, you are expected to be running either:
+
+```
+$ npm run dev
+$ npm run hot
+```
+
+to build the src and test files. With these running, you can run the faster
+
+```
+$ npm run check-dev
+```
+
+Command. It is comprised of:
+
+```
+$ npm run lint
+$ npm run test-dev
+```
+
+### Continuous Integration
+
+CI doesn't have source / test file watchers, so has to _build_ the test files
+via the commands:
 
 ```
 $ npm run check
@@ -87,9 +112,7 @@ $ npm run test
 
 The client tests rely on webpack dev server to create and serve the bundle
 of the app/test code at: http://127.0.0.1:3001/assets/main.js which is done
-with the task `npm run server-test`.
-
-
+with the task `npm run server-test` (part of `npm dev` and `npm hot`).
 
 ## Releases
 

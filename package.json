@@ -15,26 +15,33 @@
   "homepage": "https://github.com/FormidableLabs/formidable-react-component-boilerplate",
   "scripts": {
     "prepublish": "npm run build",
+
     "clean-dist": "rimraf dist",
     "build-dist-min": "webpack --config webpack.config.js",
     "build-dist-dev": "webpack --config webpack.config.dev.js",
     "build-dist": "npm run clean-dist && npm run build-dist-min && npm run build-dist-dev",
+
     "clean-lib": "rimraf lib",
     "build-lib": "npm run clean-lib && babel --stage 0 src -d lib",
     "build": "npm run build-lib && npm run build-dist",
+
     "server-dev": "webpack-dev-server --port 3000 --config demo/webpack.config.dev.js --content-base demo",
     "server-hot": "webpack-dev-server --port 3000 --config demo/webpack.config.hot.js --hot --content-base demo",
-    "open-demo": "opener http://localhost:3000/webpack-dev-server/",
-    "demo-dev": "npm run open-demo & npm run server-dev",
-    "demo-hot": "npm run open-demo & npm run server-hot",
-    "demo": "npm run demo-hot",
+    "server-test": "webpack-dev-server --port 3001 --config webpack.config.test.js",
+
+    "dev": "npm run server-dev & npm run server-test",
+    "hot": "npm run server-hot & npm run server-test",
+
     "lint-node": "eslint -c .eslintrc-node *.js demo/webpack.*.js",
     "lint-react": "eslint --ext .js,.jsx -c .eslintrc-react src demo/*.jsx",
     "lint": "npm run lint-node && npm run lint-react",
-    "server-test": "webpack-dev-server --port 3001 --config webpack.config.test.js",
-    "test-frontend": "node node_modules/karma/bin/karma start test/client/karma.conf.js",
+
+    "test-frontend-dev": "node node_modules/karma/bin/karma start test/client/karma.conf.dev.js",
     "test": "echo 'TODO (1) Client 11, (2) Server 13, (3) Integration 12 tests.'",
-    "check": "npm run lint && npm run test"
+    "test-dev": "npm run test-frontend-dev",
+
+    "check": "npm run lint && npm run test",
+    "check-dev": "npm run lint && npm run test-dev"
   },
   "dependencies": {
     "babel": "^5.5.8",
@@ -63,7 +70,6 @@
     "karma-spec-reporter": "0.0.20",
     "lodash": "^3.9.3",
     "mocha": "^2.2.5",
-    "opener": "^1.4.1",
     "phantomjs": "^1.9.17",
     "react": "0.13.x",
     "react-hot-loader": "^1.2.8",
