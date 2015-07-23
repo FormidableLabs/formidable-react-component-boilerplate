@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Karma Configuration: "full" version.
  *
@@ -5,8 +6,7 @@
  * the test files one-off for just a single run. This is appropriate for a
  * CI environment or if you're not otherwise running `npm run dev|hot`.
  */
-var _ = require("lodash");
-var webpackCfg = require("../../webpack.config.test");
+var webpackCfg = require("./webpack.config.test");
 
 // BUG: Karma 0.13 is broken for circular imports
 // TODO: Upgrade Karma to 0.13 when upstream bug is fixed.
@@ -32,7 +32,7 @@ module.exports = function (config) {
     ],
     webpack: webpackCfg,
     webpackServer: {
-      port: 3002,
+      port: 3002, // Choose a non-conflicting port (3000 app, 3001 test dev)
       quiet: false,
       noInfo: true,
       stats: {

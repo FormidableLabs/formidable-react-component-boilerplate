@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Karma Configuration: "dev" version.
  *
@@ -11,7 +12,7 @@ module.exports = function (config) {
     frameworks: ["mocha", "phantomjs-shim"],
     reporters: ["spec"],
     browsers: ["PhantomJS"],
-    basePath: "../..", // repository root.
+    basePath: ".", // repository root.
     files: [
       // Sinon has issues with webpack. Do global include.
       "node_modules/sinon/pkg/sinon.js",
