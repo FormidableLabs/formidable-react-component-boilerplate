@@ -54,13 +54,15 @@ Run the `demo` application in a browser window with hot reload:
 (More CPU usage, but faster, more specific updates)
 
 ```
-$ npm run hot
+$ npm run hot       # hot test/app server (OR)
+$ npm run open-hot  # hot servers _and a browser window opens!_
 ```
 
 Run the `demo` application with watched rebuilds, but not hot reload:
 
 ```
-$ npm run dev
+$ npm run dev       # dev test/app server (OR)
+$ npm run open-dev  # dev servers _and a browser window opens!_
 ```
 
 From there you can see:
