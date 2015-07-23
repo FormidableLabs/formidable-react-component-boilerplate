@@ -32,10 +32,13 @@
     "lint-react-test": "eslint --ext .js,.jsx -c .eslintrc-react-test src test/client",
     "lint": "npm run lint-node && npm run lint-react && npm run lint-react-test",
     "test-frontend": "node node_modules/karma/bin/karma start karma.conf.js",
+    "test-frontend-ci": "node node_modules/karma/bin/karma start --browsers PhantomJS,Firefox karma.conf.js",
     "test-frontend-dev": "node node_modules/karma/bin/karma start karma.conf.dev.js",
     "test": "npm run test-frontend && echo 'TODO Server 13, Integration 12 tests.'",
+    "test-ci": "npm run test-frontend-ci",
     "test-dev": "npm run test-frontend-dev",
     "check": "npm run lint && npm run test",
+    "check-ci": "npm run lint && npm run test-ci",
     "check-dev": "npm run lint && npm run test-dev"
   },
   "dependencies": {

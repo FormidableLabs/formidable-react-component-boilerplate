@@ -98,7 +98,9 @@ CI doesn't have source / test file watchers, so has to _build_ the test files
 via the commands:
 
 ```
-$ npm run check
+$ npm run check     # PhantomJS only
+# OR
+$ npm run check-ci  # PhantomJS,Firefox - available on Travis.
 ```
 
 Which is currently comprised of:
@@ -106,6 +108,8 @@ Which is currently comprised of:
 ```
 $ npm run lint
 $ npm run test
+# OR
+$ npm run test-ci
 ```
 
 ### Client Tests
