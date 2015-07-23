@@ -8,7 +8,7 @@
  */
 module.exports = function (config) {
   config.set({
-    frameworks: ["mocha"],
+    frameworks: ["mocha", "phantomjs-shim"],
     reporters: ["spec"],
     browsers: ["PhantomJS"],
     basePath: "../..", // repository root.
@@ -16,7 +16,7 @@ module.exports = function (config) {
       // Sinon has issues with webpack. Do global include.
       "node_modules/sinon/pkg/sinon.js",
 
-      // Test bundle.
+      // Test bundle (must be created via `npm run dev|hot|server-test`)
       "http://127.0.0.1:3001/assets/main.js"
     ],
     port: 9999,
