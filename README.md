@@ -47,25 +47,62 @@ Note that `dist/` files are only updated and committed on **tagged releases**.
 
 ## Development
 
+All development tasks consist of watching the demo bundle, the test bundle
+and launching a browser pointed to the demo page.
+
 Run the `demo` application in a browser window with hot reload:
 (More CPU usage, but faster, more specific updates)
 
 ```
-$ npm run demo
+$ npm run hot       # hot test/app server (OR)
+$ npm run open-hot  # hot servers _and a browser window opens!_
 ```
 
 Run the `demo` application with watched rebuilds, but not hot reload:
 
 ```
-$ npm run demo-dev
+$ npm run dev       # dev test/app server (OR)
+$ npm run open-dev  # dev servers _and a browser window opens!_
 ```
+
+From there you can see:
+
+* Demo app: [127.0.0.1:3000](http://127.0.0.1:3000/)
+* Client tests: [127.0.0.1:3001/test/client/test.html](http://127.0.0.1:3001/test/client/test.html)
 
 ## Quality
 
-Here's what CI (and you) should check:
+### In Development
+
+During development, you are expected to be running either:
 
 ```
-$ npm run check
+$ npm run dev
+$ npm run hot
+```
+
+to build the src and test files. With these running, you can run the faster
+
+```
+$ npm run check-dev
+```
+
+Command. It is comprised of:
+
+```
+$ npm run lint
+$ npm run test-dev
+```
+
+### Continuous Integration
+
+CI doesn't have source / test file watchers, so has to _build_ the test files
+via the commands:
+
+```
+$ npm run check     # PhantomJS only
+# OR
+$ npm run check-ci  # PhantomJS,Firefox - available on Travis.
 ```
 
 Which is currently comprised of:
@@ -73,9 +110,15 @@ Which is currently comprised of:
 ```
 $ npm run lint
 $ npm run test
+# OR
+$ npm run test-ci
 ```
 
-**NOTE - COMING SOON!**: Actual tests ;)
+### Client Tests
+
+The client tests rely on webpack dev server to create and serve the bundle
+of the app/test code at: http://127.0.0.1:3001/assets/main.js which is done
+with the task `npm run server-test` (part of `npm dev` and `npm hot`).
 
 ## Releases
 

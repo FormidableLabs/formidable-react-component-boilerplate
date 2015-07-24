@@ -31,4 +31,5 @@ node_modules
 bower_components
 .tmp
 lib
+dist-test
 npm-debug.log
