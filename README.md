@@ -94,6 +94,9 @@ $ npm run lint
 $ npm run test-dev
 ```
 
+Note that the tests here are not instrumented for code coverage and are thus
+more development / debugging friendly.
+
 ### Continuous Integration
 
 CI doesn't have source / test file watchers, so has to _build_ the test files
@@ -114,11 +117,25 @@ $ npm run test
 $ npm run test-ci
 ```
 
+Note that `test|check-cov` and `test|check-ci` run code coverage and thus the
+test code may be harder to debug because it is instrumented.
+
 ### Client Tests
 
 The client tests rely on webpack dev server to create and serve the bundle
 of the app/test code at: http://127.0.0.1:3001/assets/main.js which is done
 with the task `npm run server-test` (part of `npm dev` and `npm hot`).
+
+#### Code Coverage
+
+Code coverage reports are outputted to:
+
+```
+coverage/
+  client/
+    BROWSER_STRING/
+      lcov-report/index.html  # Viewable web report.
+```
 
 ## Releases
 
