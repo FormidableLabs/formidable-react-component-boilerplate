@@ -2,3 +2,5 @@
 "extends":
   - "defaults/configurations/walmart/es6-react"
   - "defaults/environments/test"
+"globals":
+  "expect": false
