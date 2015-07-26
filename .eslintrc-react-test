@@ -2,3 +2,4 @@
 "extends":
   - "defaults/configurations/walmart/es6-react"
   - "defaults/environments/test"
+  - ".eslintrc-base"
