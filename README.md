@@ -104,20 +104,21 @@ via the commands:
 
 ```
 $ npm run check     # PhantomJS only
-# OR
-$ npm run check-ci  # PhantomJS,Firefox - available on Travis.
+$ npm run check-cov # (OR) PhantomJS w/ coverage
+$ npm run check-ci  # (OR) PhantomJS,Firefox + coverage - available on Travis.
 ```
 
 Which is currently comprised of:
 
 ```
-$ npm run lint
-$ npm run test
-# OR
-$ npm run test-ci
+$ npm run lint      # AND ...
+
+$ npm run test      # PhantomJS only
+$ npm run test-cov  # (OR) PhantomJS w/ coverage
+$ npm run test-ci   # (OR) PhantomJS,Firefox + coverage
 ```
 
-Note that `test|check-cov` and `test|check-ci` run code coverage and thus the
+Note that `(test|check-cov)-(cov|ci)` run code coverage and thus the
 test code may be harder to debug because it is instrumented.
 
 ### Client Tests
