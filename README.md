@@ -118,7 +118,7 @@ $ npm run test-cov  # (OR) PhantomJS w/ coverage
 $ npm run test-ci   # (OR) PhantomJS,Firefox + coverage
 ```
 
-Note that `(test|check-cov)-(cov|ci)` run code coverage and thus the
+Note that `(test|check)-(cov|ci)` run code coverage and thus the
 test code may be harder to debug because it is instrumented.
 
 ### Client Tests
