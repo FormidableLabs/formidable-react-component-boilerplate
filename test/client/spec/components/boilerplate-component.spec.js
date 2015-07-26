@@ -22,7 +22,7 @@ describe("components/boilerplate-component", function () {
       .findRenderedDOMComponentWithTag(rendered, "div")
       .getDOMNode();
 
-    expect(divNode).to.have.property("innerText", "Edit me!");
+    expect(divNode).to.have.property("innerHTML", "Edit me!");
   });
 
   it("has expected content with shallow render", function () {
