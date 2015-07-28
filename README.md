@@ -8,11 +8,13 @@ Formidable Labs flavored React component boilerplate. This is a set of opinions
 on how to start a React component.
 
 ## Make it yours!
-
-The top level component in this boilerplate repo is called
-`BoilerplateComponent`. You probably want to change that. Remember to update
-`src/index.js`, `webpack.config.js`, and `webpack.config.dev.js`to reflect your
-naming changes!
+Create a new project based on this repo by running our handy yeoman generator!
+```
+npm install -g yeoman
+npm install -g generator-formidable-react-component
+yo formidable-react-component
+```
+the generator will clone down this repo at `master`, `npm install`, and rename generic boilerplate to match the project name you specify. 
 
 ## The Generator
 
@@ -21,6 +23,7 @@ pull down the freshest copy of this repo whenever you use it.  It just copies
 this repo so you don't have to. Check it out
 [here](https://github.com/FormidableLabs/generator-formidable-react-component)
 
+The generator replaces `boilerplate-component` and `BoilerplateComponent` across this repo, and renames `src/components/boilerplate-component.jsx`
 
 ## Build
 
