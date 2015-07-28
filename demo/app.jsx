@@ -1,12 +1,12 @@
 /*global document:false*/
 import React from "react";
-import {BoilerplateComponent} from "../src/index";
+import {Component} from "../src/index";
 
 class App extends React.Component {
   render() {
     return (
       <div className="demo">
-        < BoilerplateComponent />
+        < Component />
       </div>
     );
   }

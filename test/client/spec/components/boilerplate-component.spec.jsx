@@ -2,7 +2,8 @@
  * Client tests
  */
 import React from "react/addons";
-import Component from "src/components/boilerplate-component";
+// component is an alias src/components/[FILE_NAME].jsx
+import Component from "component";
 
 // Use `TestUtils` to inject into DOM, simulate events, etc.
 // See: https://facebook.github.io/react/docs/test-utils.html
