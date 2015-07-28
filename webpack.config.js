@@ -24,7 +24,10 @@ module.exports = {
     libraryTarget: "umd"
   },
   resolve: {
-    extensions: ["", ".js", ".jsx"]
+    extensions: ["", ".js", ".jsx"],
+    alias: {
+      component: "./components/" + meta.FILE_NAME
+    }
   },
   module: {
     loaders: [

@@ -2,6 +2,8 @@
 "use strict";
 
 var webpack = require("webpack");
+var path = require("path");
+var meta = require("../meta")
 
 module.exports = {
 
@@ -26,7 +28,10 @@ module.exports = {
     reasons: true
   },
   resolve: {
-    extensions: ["", ".js", ".jsx"]
+    extensions: ["", ".js", ".jsx"],
+    alias: {
+      component: "./components/" + meta.FILE_NAME
+    }
   },
   module: {
     loaders: [
