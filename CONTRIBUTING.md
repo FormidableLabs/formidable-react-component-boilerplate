@@ -13,8 +13,6 @@ All boilerplate components should be named `boilerplate-component` or `Boilerpla
 
 `src/components/boilerplate-component.jsx` SHOULD NOT be moved or renamed
 
-The dev dependency `replace` is required by the generator.
-
 ## Checks, Tests
 
 Run `npm run check` before committing.
