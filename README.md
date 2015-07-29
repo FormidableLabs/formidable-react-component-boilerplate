@@ -4,26 +4,25 @@
 React Component Boilerplate
 ===========================
 
-Formidable Labs flavored React component boilerplate. This is a set of opinions
-on how to start a React component.
+Formidable Labs flavored React component boilerplate. This is a set of opinions on how to start a React component.
 
 ## Make it yours!
 Create a new project based on this repo by running our handy yeoman generator!
+
 ```
 npm install -g yeoman
 npm install -g generator-formidable-react-component
 yo formidable-react-component
 ```
+
 the generator will clone down this repo at `master`, `npm install`, and rename generic boilerplate to match the project name you specify. 
 
 ## The Generator
 
-We expect these opinions to change *often*.  We've written a yeoman generator to
-pull down the freshest copy of this repo whenever you use it.  It just copies
-this repo so you don't have to. Check it out
-[here](https://github.com/FormidableLabs/generator-formidable-react-component)
+We expect these opinions to change *often*.  We've written a yeoman generator to pull down the freshest copy of this repo whenever you use it.  It just copies this repo so you don't have to. Check it out [here](https://github.com/FormidableLabs/generator-formidable-react-component)
 
-The generator replaces `boilerplate-component` and `BoilerplateComponent` across this repo, and renames `src/components/boilerplate-component.jsx`
+The generator replaces `boilerplate-component` and `BoilerplateComponent` across this repo, and renames `src/components/boilerplate-component.jsx` and 
+`test/client/spec/components/boilerplate-component.spec.jsx`
 
 ## Build
 
@@ -50,8 +49,7 @@ Note that `dist/` files are only updated and committed on **tagged releases**.
 
 ## Development
 
-All development tasks consist of watching the demo bundle, the test bundle
-and launching a browser pointed to the demo page.
+All development tasks consist of watching the demo bundle, the test bundle and launching a browser pointed to the demo page.
 
 Run the `demo` application in a browser window with hot reload:
 (More CPU usage, but faster, more specific updates)
@@ -97,13 +95,11 @@ $ npm run lint
 $ npm run test-dev
 ```
 
-Note that the tests here are not instrumented for code coverage and are thus
-more development / debugging friendly.
+Note that the tests here are not instrumented for code coverage and are thus more development / debugging friendly.
 
 ### Continuous Integration
 
-CI doesn't have source / test file watchers, so has to _build_ the test files
-via the commands:
+CI doesn't have source / test file watchers, so has to _build_ the test files via the commands:
 
 ```
 $ npm run check     # PhantomJS only
@@ -143,9 +139,7 @@ coverage/
 
 ## Releases
 
-Built files in `dist/` should **not** be committeed during development or PRs.
-Instead we _only_ build and commit them for published, tagged releases. So
-the basic workflow is:
+Built files in `dist/` should **not** be committeed during development or PRs. Instead we _only_ build and commit them for published, tagged releases. So the basic workflow is:
 
 ```
 # Update version
