@@ -1,7 +1,6 @@
 ---
-"plugins":
+plugins:
   - "filenames"
-"rules":
+
+rules:
   "filenames/filenames": [2, "^[a-z\\-\\.]+$"] # dash-cased filenames.
-"globals":
-  "expect": false

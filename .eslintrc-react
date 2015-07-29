@@ -1,4 +1,4 @@
 ---
-"extends":
+extends:
   - "defaults/configurations/walmart/es6-react"
   - ".eslintrc-base"
