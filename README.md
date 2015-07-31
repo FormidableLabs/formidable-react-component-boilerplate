@@ -157,10 +157,15 @@ In code:
 ```
 # Update version (_probably_ `patch`), rebuild `dist/` and `lib/`.
 $ npm version major|minor|patch -m "Version %s - INSERT_REASONS"
+# ... the project is now patched and committed to git (but unpushed).
+
+# Check that everything looks good in last commit and push.
+$ git diff HEAD^ HEAD
+$ git push && git push --tags
 # ... the project is now pushed to GitHub and available to `bower`.
 
+# And finally publish to `npm`!
 $ npm publish
-# ... the project is now _published_ and available to `npm`.
 ```
 
 Side note: `npm publish` runs `npm prepublish` under the hood, which does the
