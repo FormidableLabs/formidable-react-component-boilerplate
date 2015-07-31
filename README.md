@@ -152,6 +152,14 @@ the basic workflow is:
     * **NOTE**: We don't _build_ in `prepublish` because of the
       [`npm install` runs `npm prepublish` bug](https://github.com/npm/npm/issues/3059)
 
+
+**Note - NPM**: To correctly run `preversion`, etc. scripts, please make sure
+you have a very modern `npm` binary:
+
+```
+$ npm install -g npm
+```
+
 In code:
 
 ```
