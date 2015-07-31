@@ -7,6 +7,14 @@ Thanks for helping out!
 
 Run `npm run demo` to run a webpack dev server with component examples.
 
+## Generator Specific
+
+All boilerplate components should be named `boilerplate-component` or 
+`BoilerplateComponent` as appropriate.
+
+`src/components/boilerplate-component.jsx` and 
+`test/client/spec/components/boilerplate-component.spec.jsx` SHOULD NOT be moved or renamed
+
 ## Checks, Tests
 
 Run `npm run check` before committing.
