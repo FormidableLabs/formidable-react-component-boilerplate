@@ -30,6 +30,47 @@ From there you can see:
 * Demo app: [127.0.0.1:3000](http://127.0.0.1:3000/)
 * Client tests: [127.0.0.1:3001/test/client/test.html](http://127.0.0.1:3001/test/client/test.html)
 
+
+## Programming Guide
+
+### Logging
+
+We use the following basic pattern for logging:
+
+```js
+if (process.env.NODE_ENV !== "production") {
+  /* eslint-disable no-console */
+  if (typeof console !== "undefined" && console.warn) {
+    console.warn("Oh noes! bad things happened.");
+  }
+  /* eslint-enable no-console */
+}
+```
+
+Replace `console.warn` in the condtional + method call as appropriate.
+
+Breaking this down:
+
+* `process.env.NODE_ENV !== "production"` - This part removes all traces of
+  the code in the production bundle, to save on file size. This _also_ means
+  that no warnings will be displayed in production.
+* `typeof console !== "undefined" && console.METHOD` - A permissive check to
+  make sure the `console` object exists and can use the appropriate `METHOD` -
+  `warn`, `info`, etc.
+
+To signal production mode to the webpack build, declare the `NODE_ENV` variable:
+
+```js
+new webpack.DefinePlugin({
+  "process.env.NODE_ENV": JSON.stringify("production")
+})
+```
+
+Unfortunately, we need to do _all_ of this every time to have Uglify properly
+drop the code, but with this trick, the production bundle has no change in code
+size.
+
+
 ## Quality
 
 ### In Development
