@@ -140,32 +140,30 @@ coverage/
 
 ## Releases
 
-Built files in `dist/` should **not** be committeed during development or PRs.
-Instead we _only_ build and commit them for published, tagged releases. So
-the basic workflow is:
-
-* [`npm version`](https://docs.npmjs.com/cli/version): Runs verification,
-  builds `dist/` and `lib/` via `scripts` commands.
-    * Our scripts also run the applicable `git` commands, so be very careful
-      when running out `version` commands.
-* [`npm publish`](https://docs.npmjs.com/cli/publish): Uploads to NPM.
-    * **NOTE**: We don't _build_ in `prepublish` because of the
-      [`npm install` runs `npm prepublish` bug](https://github.com/npm/npm/issues/3059)
-
-
-**Note - NPM**: To correctly run `preversion`, etc. scripts, please make sure
-you have a very modern `npm` binary:
+**IMPORTANT - NPM**: To correctly run `preversion` your first step is to make
+sure that you have a very modern `npm` binary:
 
 ```
 $ npm install -g npm
 ```
 
-In code:
+Built files in `dist/` should **not** be committeed during development or PRs.
+Instead we _only_ build and commit them for published, tagged releases. So
+the basic workflow is:
 
 ```
-# Update version (_probably_ `patch`), rebuild `dist/` and `lib/`.
+# Make sure you have a clean, up-to-date `master`
+$ git pull
+$ git status # (should be no changes)
+
+# Choose a semantic update for the new version.
+# If you're unsure, read about semantic versioning at http://semver.org/
 $ npm version major|minor|patch -m "Version %s - INSERT_REASONS"
-# ... the project is now patched and committed to git (but unpushed).
+
+# ... the `dist/` and `lib/` directories are now built, `package.json` is
+# updated, and the appropriate files are committed to git (but unpushed).
+#
+# *Note*: `lib/` is uncommitted, but built and must be present to push to npm.
 
 # Check that everything looks good in last commit and push.
 $ git diff HEAD^ HEAD
@@ -176,5 +174,15 @@ $ git push && git push --tags
 $ npm publish
 ```
 
-Side note: `npm publish` runs `npm prepublish` under the hood, which does the
-build.
+And you've published!
+
+For additional information on the underlying NPM technologies and approaches,
+please review:
+
+* [`npm version`](https://docs.npmjs.com/cli/version): Runs verification,
+  builds `dist/` and `lib/` via `scripts` commands.
+    * Our scripts also run the applicable `git` commands, so be very careful
+      when running out `version` commands.
+* [`npm publish`](https://docs.npmjs.com/cli/publish): Uploads to NPM.
+    * **NOTE**: We don't _build_ in `prepublish` because of the
+      [`npm install` runs `npm prepublish` bug](https://github.com/npm/npm/issues/3059)
