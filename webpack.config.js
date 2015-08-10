@@ -2,7 +2,6 @@
 
 var webpack = require("webpack");
 var path = require("path");
-var meta = require("./meta");
 
 module.exports = {
   cache: true,
@@ -19,8 +18,8 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, "dist"),
-    filename: meta.FILE_NAME + ".min.js",
-    library: meta.LIB_NAME,
+    filename: "boilerplate-component.min.js",
+    library: "BoilerplateComponent",
     libraryTarget: "umd"
   },
   resolve: {
