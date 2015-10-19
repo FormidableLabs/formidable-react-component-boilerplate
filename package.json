@@ -22,7 +22,7 @@
     "build-dist-dev": "webpack --config webpack.config.dev.js",
     "build-dist": "npm run clean-dist && npm run build-dist-min && npm run build-dist-dev",
     "clean-lib": "rimraf lib",
-    "build-lib": "npm run clean-lib && babel --stage 0 src -d lib",
+    "build-lib": "npm run clean-lib && babel src -d lib",
     "clean": "npm run clean-lib && npm run clean-dist",
     "build": "npm run build-lib && npm run build-dist",
     "server-dev": "webpack-dev-server --port 3000 --config demo/webpack.config.dev.js --colors --content-base demo",
