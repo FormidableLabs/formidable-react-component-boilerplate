@@ -7,6 +7,7 @@
 var webpackCovCfg = require("./webpack.config.coverage");
 
 module.exports = function (config) {
+  /* eslint-disable global-require */
   require("./karma.conf")(config);
   config.set({
     reporters: ["spec", "coverage"],
