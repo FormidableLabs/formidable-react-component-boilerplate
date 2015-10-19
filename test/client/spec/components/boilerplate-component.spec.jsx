@@ -1,16 +1,15 @@
 /**
  * Client tests
  */
-import React from "react/addons";
+import React from "react";
 import Component from "src/components/boilerplate-component";
-
 // Use `TestUtils` to inject into DOM, simulate events, etc.
 // See: https://facebook.github.io/react/docs/test-utils.html
-const TestUtils = React.addons.TestUtils;
+import TestUtils from "react-addons-test-utils";
 
-describe("components/boilerplate-component", function () {
+describe("components/boilerplate-component", () => {
 
-  it("has expected content with deep render", function () {
+  it("has expected content with deep render", () => {
     // This is a "deep" render that renders children + all into an actual
     // browser DOM node.
     //
@@ -19,13 +18,12 @@ describe("components/boilerplate-component", function () {
 
     // This is a real DOM node to assert on.
     const divNode = TestUtils
-      .findRenderedDOMComponentWithTag(rendered, "div")
-      .getDOMNode();
+      .findRenderedDOMComponentWithTag(rendered, "div");
 
     expect(divNode).to.have.property("innerHTML", "Edit me!");
   });
 
-  it("has expected content with shallow render", function () {
+  it("has expected content with shallow render", () => {
     // This is a "shallow" render that renders only the current component
     // without using the actual DOM.
     //
