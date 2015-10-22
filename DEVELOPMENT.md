@@ -1,6 +1,8 @@
 Development
 ===========
 
+TODO: Builder introduction
+
 ## Build
 
 Build for production use (NPM, bower, etc) and create `dist` UMD bundles
@@ -90,7 +92,7 @@ $ npm run check-dev
 Command. It is comprised of:
 
 ```
-$ npm run lint
+$ builder run lint
 $ npm run test-dev
 ```
 
@@ -111,7 +113,7 @@ $ npm run check-ci  # (OR) PhantomJS,Firefox + coverage - available on Travis.
 Which is currently comprised of:
 
 ```
-$ npm run lint      # AND ...
+$ builder run lint  # AND ...
 
 $ npm run test      # PhantomJS only
 $ npm run test-cov  # (OR) PhantomJS w/ coverage
