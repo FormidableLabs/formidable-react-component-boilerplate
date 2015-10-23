@@ -18,10 +18,15 @@
     "version": "builder run npm:version",
     "test": "builder run npm:test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "builder": "*",
+    "builder-react-component": "*"
+  },
   "devDependencies": {
+    "chai": "^3.2.0",
     "react": "^0.14.0",
     "react-addons-test-utils": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "sinon-chai": "^2.8.0"
   }
 }
