@@ -7,47 +7,21 @@
     "type": "git",
     "url": "https://github.com/FormidableLabs/formidable-react-component-boilerplate.git"
   },
-  "author": "Lauren Eastridge",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/FormidableLabs/formidable-react-component-boilerplate/issues"
   },
   "homepage": "https://github.com/FormidableLabs/formidable-react-component-boilerplate",
   "scripts": {
-    "postinstall": "node -e \"require('fs').stat('lib', function(e,s){process.exit(e || !s.isDirectory() ? 1 : 0)})\" || builder run build-lib",
-    "preversion": "npm run check",
-    "version": "builder run clean && builder run build && git add -A dist",
-    "test": "builder run npm:test",
-    "dev": "concurrent -kr 'npm run server-dev' 'npm run server-test'",
-    "hot": "concurrent -kr 'npm run server-hot' 'npm run server-test'",
-    "open-demo": "opener http://127.0.0.1:3000",
-    "open-dev": "concurrent -kr 'npm run dev' 'npm run open-demo'",
-    "open-hot": "concurrent -kr 'npm run hot' 'npm run open-demo'"
+    "postinstall": "builder run npm:postinstall",
+    "preversion": "builder run npm:preversion",
+    "version": "builder run npm:version",
+    "test": "builder run npm:test"
   },
   "dependencies": {},
   "devDependencies": {
-    "chai": "^3.2.0",
-    "concurrently": "^0.1.1",
-    "karma": "^0.13.9",
-    "karma-chrome-launcher": "^0.2.0",
-    "karma-coverage": "^0.5.2",
-    "karma-firefox-launcher": "^0.1.6",
-    "karma-ie-launcher": "^0.2.0",
-    "karma-mocha": "^0.2.0",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "karma-phantomjs-shim": "^1.1.1",
-    "karma-safari-launcher": "^0.1.1",
-    "karma-sauce-launcher": "^0.2.14",
-    "karma-spec-reporter": "0.0.20",
-    "karma-webpack": "^1.7.0",
-    "lodash": "^3.10.1",
-    "mocha": "^2.2.5",
-    "opener": "^1.4.1",
-    "phantomjs": "^1.9.18",
     "react": "^0.14.0",
     "react-addons-test-utils": "^0.14.0",
-    "react-dom": "^0.14.0",
-    "sinon": "^1.16.1",
-    "sinon-chai": "^2.8.0"
+    "react-dom": "^0.14.0"
   }
 }

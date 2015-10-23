@@ -17,9 +17,9 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 script:
-  - npm run check-ci
+  - node_modules/.bin/builder run check-ci
 
   # Prune deps to just production and ensure we can still build
   - npm prune --production
   - npm install --production
-  - npm run build
+  - node_modules/.bin/builder run build
