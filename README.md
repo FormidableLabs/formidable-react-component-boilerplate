@@ -1,6 +1,5 @@
 [![Travis Status][trav_img]][trav_site]
 
-
 React Component Boilerplate
 ===========================
 
@@ -31,4 +30,3 @@ Please see [CONTRIBUTING](CONTRIBUTING.md)
 
 [trav_img]: https://api.travis-ci.org/FormidableLabs/formidable-react-component-boilerplate.svg
 [trav_site]: https://travis-ci.org/FormidableLabs/formidable-react-component-boilerplate
-
