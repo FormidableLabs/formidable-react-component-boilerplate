@@ -3,7 +3,8 @@ language: node_js
 node_js:
   - "0.10"
   - "0.12"
-  - "4.2"
+  # https://github.com/FormidableLabs/formidable-react-component-boilerplate/issues/53
+  #- "4.2"
 
 # Use container-based Travis infrastructure.
 sudo: false
