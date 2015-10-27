@@ -5,7 +5,8 @@ Thanks for helping out!
 
 ## Development
 
-Run `builder run demo` to run a webpack dev server with component examples.
+Run `builder run open-hot` or `builder run open-dev` to run a webpack dev server
+with component examples.
 
 ## Checks, Tests
 
