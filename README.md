@@ -8,17 +8,24 @@ on how to start a React component.
 
 ## The Generator
 
-We expect these opinions to change *often*.  We've written a yeoman generator to pull down the freshest copy of this repo whenever you use it.  It just copies this repo so you don't have to. Check it out [here](https://github.com/FormidableLabs/generator-formidable-react-component)
+We expect these opinions to change *often*.  We've written a yeoman generator to
+pull down the freshest copy of this repo whenever you use it.  It just copies
+this repo so you don't have to. Check it out
+[here](https://github.com/FormidableLabs/generator-formidable-react-component)
 
 To create a new project based on this boilerplate:
 
-```
-npm install -g yo
-npm install -g generator-formidable-react-component
-yo formidable-react-component
+```sh
+$ npm install -g yo
+$ npm install -g generator-formidable-react-component
+$ yo formidable-react-component
 ```
 
-The generator replaces "boilerplate-component" and "BoilerplateComponent" across this repo with names specific to your new project. `src/components/boilerplate-component.jsx` and `test/client/spec/components/boilerplate-component.spec.jsx` are also renamed, and a fresh `README.md` is created.
+The generator replaces "boilerplate-component" and "BoilerplateComponent" across
+this repo with names specific to your new project.
+`src/components/boilerplate-component.jsx` and
+`test/client/spec/components/boilerplate-component.spec.jsx`
+are also renamed, and a fresh `README.md` is created.
 
 ## Development
 

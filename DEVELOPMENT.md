@@ -4,6 +4,16 @@ Development
 We use [builder][] and `npm` to control all aspects of development and
 publishing.
 
+As a preliminary matter, please update your shell to include
+`./node_modules/.bin` in `PATH` like:
+
+```sh
+export PATH="${PATH}:./node_modules/.bin"
+```
+
+So you can type `builder` instead of `./node_modules/.bin/builder` for all
+commands.
+
 ## Build
 
 Build for production use (NPM, bower, etc) and create `dist` UMD bundles
@@ -18,12 +28,19 @@ Note that `dist/` files are only updated and committed on **tagged releases**.
 
 ## Development
 
+Most development / quality tasks require the `devDependencies` from the
+`builder` archetype. Install all dev dependencies with:
+
+```sh
+$ builder install
+```
+
 All development tasks consist of watching the demo bundle, the test bundle
 and launching a browser pointed to the demo page.
 
 Run the `demo` application with watched rebuilds:
 
-```
+```sh
 $ builder run dev       # dev test/app server (OR)
 $ builder run open-dev  # dev servers _and a browser window opens!_
 ```
@@ -80,19 +97,19 @@ size.
 
 During development, you are expected to be running either:
 
-```
+```sh
 $ builder run dev
 ```
 
 to build the lib and test files. With these running, you can run the faster
 
-```
+```sh
 $ builder run check-dev
 ```
 
 Command. It is comprised of:
 
-```
+```sh
 $ builder run lint
 $ builder run test-dev
 ```
@@ -105,7 +122,7 @@ more development / debugging friendly.
 CI doesn't have source / test file watchers, so has to _build_ the test files
 via the commands:
 
-```
+```sh
 $ builder run check     # PhantomJS only
 $ builder run check-cov # (OR) PhantomJS w/ coverage
 $ builder run check-ci  # (OR) PhantomJS,Firefox + coverage - available on Travis.
@@ -113,7 +130,7 @@ $ builder run check-ci  # (OR) PhantomJS,Firefox + coverage - available on Travi
 
 Which is currently comprised of:
 
-```
+```sh
 $ builder run lint  # AND ...
 
 $ builder run test      # PhantomJS only
@@ -146,7 +163,7 @@ coverage/
 **IMPORTANT - NPM**: To correctly run `preversion` your first step is to make
 sure that you have a very modern `npm` binary:
 
-```
+```sh
 $ npm install -g npm
 ```
 
@@ -154,7 +171,7 @@ Built files in `dist/` should **not** be committeed during development or PRs.
 Instead we _only_ build and commit them for published, tagged releases. So
 the basic workflow is:
 
-```
+```sh
 # Make sure you have a clean, up-to-date `master`
 $ git pull
 $ git status # (should be no changes)
