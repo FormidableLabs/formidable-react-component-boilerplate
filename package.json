@@ -19,8 +19,8 @@
     "test": "builder run npm:test"
   },
   "dependencies": {
-    "builder": "formidablelabs/builder#chore-initial-implementation",
-    "builder-react-component": "formidablelabs/builder-react-component#chore-initial-implementation"
+    "builder": "^2.0.1",
+    "builder-react-component": "0.0.2"
   },
   "devDependencies": {
     "chai": "^3.2.0",
