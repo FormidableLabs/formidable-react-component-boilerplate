@@ -21,11 +21,11 @@ $ npm install -g generator-formidable-react-component
 $ yo formidable-react-component
 ```
 
-The generator replaces "boilerplate-component" and "BoilerplateComponent" across
-this repo with names specific to your new project.
-`src/components/boilerplate-component.jsx` and
-`test/client/spec/components/boilerplate-component.spec.jsx`
-are also renamed, and a fresh `README.md` is created.
+The generator replaces `formidable-react-component-boilerplate` and
+`FormidableReactComponentBoilerplate` across this repo with names specific to
+your new project. `src/components/formidable-react-component-boilerplate.jsx`
+and `test/client/spec/components/formidable-react-component-
+boilerplate.spec.jsx` are also renamed, and a fresh `README.md` is created.
 
 ## Development
 

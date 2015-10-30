@@ -19,8 +19,10 @@ These files are only committed when we tag releases.
 
 ## Generator Compatibility
 
-All boilerplate components should be named `boilerplate-component` or
-`BoilerplateComponent` as appropriate.
+All boilerplate components should be named
+`formidable-react-component-boilerplate` or
+`FormidableReactComponentBoilerplate` as appropriate.
 
-`src/components/boilerplate-component.jsx` and
-`test/client/spec/components/boilerplate-component.spec.jsx` SHOULD NOT be moved or renamed
+`src/components/formidable-react-component-boilerplate.jsx` and
+`test/client/spec/components/formidable-react-component-boilerplate.spec.jsx`
+SHOULD NOT be moved or renamed

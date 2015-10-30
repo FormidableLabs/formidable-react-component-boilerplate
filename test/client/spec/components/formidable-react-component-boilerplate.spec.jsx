@@ -2,12 +2,12 @@
  * Client tests
  */
 import React from "react";
-import Component from "src/components/boilerplate-component";
+import Component from "src/components/formidable-react-component-boilerplate";
 // Use `TestUtils` to inject into DOM, simulate events, etc.
 // See: https://facebook.github.io/react/docs/test-utils.html
 import TestUtils from "react-addons-test-utils";
 
-describe("components/boilerplate-component", () => {
+describe("components/formidable-react-component-boilerplate", () => {
 
   it("has expected content with deep render", () => {
     // This is a "deep" render that renders children + all into an actual

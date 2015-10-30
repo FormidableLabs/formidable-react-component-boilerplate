@@ -1,13 +1,13 @@
 /*global document:false*/
 import React from "react";
 import ReactDOM from "react-dom";
-import {BoilerplateComponent} from "../src/index";
+import {FormidableReactComponentBoilerplate} from "../src/index";
 
 class App extends React.Component {
   render() {
     return (
       <div className="demo">
-        <BoilerplateComponent />
+        <FormidableReactComponentBoilerplate />
       </div>
     );
   }

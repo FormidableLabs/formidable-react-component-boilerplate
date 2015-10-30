@@ -1,3 +1,4 @@
 module.exports = {
-  BoilerplateComponent: require("./components/boilerplate-component")
+  FormidableReactComponentBoilerplate:
+    require("./components/formidable-react-component-boilerplate")
 };
