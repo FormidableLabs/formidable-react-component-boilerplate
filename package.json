@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "builder": "^2.0.1",
-    "builder-react-component": "0.0.3"
+    "builder-react-component": "0.0.4"
   },
   "devDependencies": {
     "chai": "^3.2.0",
