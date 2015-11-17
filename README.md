@@ -24,8 +24,8 @@ $ yo formidable-react-component
 The generator replaces `formidable-react-component-boilerplate` and
 `FormidableReactComponentBoilerplate` across this repo with names specific to
 your new project. `src/components/formidable-react-component-boilerplate.jsx`
-and `test/client/spec/components/formidable-react-component-
-boilerplate.spec.jsx` are also renamed, and a fresh `README.md` is created.
+and `test/client/spec/components/formidable-react-component-boilerplate.spec.jsx`
+are also renamed, and a fresh `README.md` is created.
 
 ## Development
 
