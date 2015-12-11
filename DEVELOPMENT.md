@@ -14,6 +14,7 @@ export PATH="${PATH}:./node_modules/.bin"
 So you can type `builder` instead of `./node_modules/.bin/builder` for all
 commands.
 
+
 ## Build
 
 Build for production use (NPM, bower, etc) and create `dist` UMD bundles
@@ -31,14 +32,25 @@ Note that `dist/` files are only updated and committed on **tagged releases**.
 All development tasks consist of watching the demo bundle, the test bundle
 and launching a browser pointed to the demo page.
 
-Run the `demo` application with watched rebuilds:
+Run the `demo` application with watched rebuilds either doing:
+
+### Basic Watched Builds
 
 ```sh
-$ builder run dev       # dev test/app server (OR)
-$ builder run open-dev  # dev servers _and a browser window opens!_
+$ builder run dev       # dev test/app server
+$ builder run open-dev  # (OR) dev servers _and a browser window opens!_
 ```
 
-From there you can see:
+### Watched Builds + Hot Reloading
+
+Same as above, but with hot reloading of React components.
+
+```sh
+$ builder run hot       # hot test/app server
+$ builder run open-hot  # (OR) hot servers _and a browser window opens!_
+```
+
+From there, using either `dev` or `hot`, you can see:
 
 * Demo app: [127.0.0.1:3000](http://127.0.0.1:3000/)
 * Client tests: [127.0.0.1:3001/test/client/test.html](http://127.0.0.1:3001/test/client/test.html)
